@@ -9,13 +9,8 @@ namespace CollectionsMasterConsoleUI
     {
         static void Main(string[] args)
         {
-            //TODO: Follow the steps provided in the comments under each region.
-            //Make the console formatted to display each section well
-            //Utlilize the method stubs at the bottom for the methods you must create ⬇⬇⬇
-
             #region Arrays
             //Done:// Create an integer Array of size 50
-            //int[] myArray = new int[50];
             var numbers = new int[50];
 
             //Done:// Create a method to populate the number array with 50 random numbers that are between 0 and 50
@@ -121,18 +116,19 @@ namespace CollectionsMasterConsoleUI
             
                         Console.WriteLine("------------------");
 
-            //TODO: Sort the list then print results
+            //Done: Sort the list then print results
                         Console.WriteLine("Sorted Evens!!");
-            
-
+            numbList.Sort();
+            NumberPrinter(numbList);
             
                         Console.WriteLine("------------------");
 
-            //TODO: Convert the list to an array and store that into a variable
+            //Done: Convert the list to an array and store that into a variable
             
+            var myArray = numbList.ToArray();   
 
-            //TODO: Clear the list
-            
+            //Done: Clear the list
+            numbList.Clear();
 
             #endregion
         }
@@ -167,7 +163,6 @@ namespace CollectionsMasterConsoleUI
         private static void NumberChecker(List<int> numberList, int searchNumber)
         {//Done: Create a method that prints if a user number is present in the list
          //Remember: What if the user types "abc" accident your app should handle that!
-            for (var i = 0; i < numberList.Count; i++) 
             { 
                 if(numberList.Contains(searchNumber))         //(searchNumber == numberList[i])
                 {
@@ -177,8 +172,7 @@ namespace CollectionsMasterConsoleUI
                 {
                     Console.WriteLine($"This is an invalid response!");                
                 }
-
-                NumberPrinter(numberList);
+              
             }
         }
 
